@@ -1,0 +1,29 @@
+name: Book
+
+on:
+  push:
+  pull_request:
+  workflow_call:
+  workflow_dispatch:
+
+permissions: 
+  contents: write
+
+jobs:
+  book:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Build book
+      uses: docker://michaelfbryan/mdbook-docker-image:v0.4.7
+      with:
+        args: build
+
+    - name: Deploy pages
+      uses: JamesIves/github-pages-deploy-action@v4.4.3
+      with:
+        branch: gh-pages
+        folder: book/html
+        single-commit: true
+        dry-run: ${{ !(github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/')) }}

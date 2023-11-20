@@ -1,0 +1,14 @@
+[book]
+language = "en"
+multilingual = false
+src = "src"
+title = "Knowledge Base"
+
+[build]
+create-missing = false
+
+[output.html]
+
+[output.linkcheck]
+optional = true
+follow-web-links = true
