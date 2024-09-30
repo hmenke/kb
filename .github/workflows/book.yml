@@ -21,7 +21,7 @@ jobs:
         args: build
 
     - name: Deploy pages
-      uses: JamesIves/github-pages-deploy-action@v4.6.3
+      uses: JamesIves/github-pages-deploy-action@v4.6.8
       with:
         branch: gh-pages
         folder: book/html
