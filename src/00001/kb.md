@@ -1,4 +1,4 @@
-# gfortran, OpenMP and static linking
+# gfortran: OpenMP and static linking
 
 When linking Fortran executables or linking to `-lgfortran` statically in
 conjunction with `-fopenmp` upon termination the application segfaults in the
