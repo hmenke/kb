@@ -13,7 +13,7 @@ jobs:
   book:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
 
     - name: Build book
       uses: docker://michaelfbryan/mdbook-docker-image:v0.4.7
